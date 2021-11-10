@@ -35,10 +35,16 @@ class ViewController: UIViewController {
         imageView.image = imageArray[nowIndex]
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // segueから遷移先のEnlargedViewControllerを取得する
+        let enlargedViewController:EnlargedViewController = segue.destination as! EnlargedViewController
+        // 遷移先のenlargedViewControllerで宣言しているimageNumberに値を代入して渡す
+        enlargedViewController.imageNumber = nowIndex
+    }
+    
     //拡大した画面から戻る
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
-}
+    }
     
     //次の写真を表示
     @IBAction func nextImage(_ sender: Any) {

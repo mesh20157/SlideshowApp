@@ -11,6 +11,13 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <tapGestureRecognizer id="MV2-Mc-4a5">
+                    <connections>
+                        <action selector="enlargeImage:" destination="BYZ-38-t0r" id="HSl-8O-DAr"/>
+                        <segue destination="eA3-cC-66f" kind="show" id="QlS-E4-j3Q"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -46,6 +53,14 @@
                                     <outletCollection property="gestureRecognizers" destination="MV2-Mc-4a5" appends="YES" id="z8x-PH-FJd"/>
                                 </connections>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXP-wr-9Nh">
+                                <rect key="frame" x="184" y="100" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="eA3-cC-66f" kind="show" id="JVQ-vy-vHg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -69,13 +84,6 @@
                         <outlet property="startButton" destination="sUV-FA-nbS" id="f6j-on-UgU"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="MV2-Mc-4a5">
-                    <connections>
-                        <action selector="enlargeImage:" destination="BYZ-38-t0r" id="HSl-8O-DAr"/>
-                        <segue destination="eA3-cC-66f" kind="show" id="QlS-E4-j3Q"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="75.669642857142847"/>
         </scene>
@@ -96,7 +104,7 @@
                                 <rect key="frame" x="344" y="30" width="30" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="×">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" systemColor="tertiaryLabelColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="ZOV-yK-6fM" kind="unwind" unwindAction="unwind:" id="Fb6-hg-08p"/>
@@ -111,6 +119,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bck-hm-aN5"/>
+                    <connections>
+                        <outlet property="enlargedImage" destination="nYz-9X-lqH" id="fjf-sN-7Ta"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGb-Gy-ZHG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ZOV-yK-6fM" userLabel="Exit" sceneMemberID="exit"/>
@@ -118,9 +129,15 @@
             <point key="canvasLocation" x="704.34782608695662" y="75.669642857142847"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="JVQ-vy-vHg"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

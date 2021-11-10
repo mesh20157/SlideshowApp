@@ -31,18 +31,21 @@
                                     <action selector="previousImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="efi-JN-YXE"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HE6-p1-1g5">
-                                <rect key="frame" x="20" y="179" width="374" height="413"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="P1B-qW-Xoi" appends="YES" id="bDE-Ex-muT"/>
-                                </connections>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUV-FA-nbS">
                                 <rect key="frame" x="192" y="687" width="30" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="▶︎"/>
+                                <connections>
+                                    <action selector="slideShowButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GNl-Sj-0nM"/>
+                                </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HE6-p1-1g5">
+                                <rect key="frame" x="20" y="179" width="374" height="413"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MV2-Mc-4a5" appends="YES" id="z8x-PH-FJd"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -61,21 +64,25 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="HE6-p1-1g5" id="wdF-dy-yag"/>
+                        <outlet property="nextImageButton" destination="MrT-yY-0GJ" id="Akh-Om-xvt"/>
+                        <outlet property="previousImageButton" destination="E66-yk-UI0" id="qlU-T8-PJJ"/>
+                        <outlet property="startButton" destination="sUV-FA-nbS" id="f6j-on-UgU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="P1B-qW-Xoi">
+                <tapGestureRecognizer id="MV2-Mc-4a5">
                     <connections>
-                        <segue destination="eA3-cC-66f" kind="show" id="LX4-Sy-nfd"/>
+                        <action selector="enlargeImage:" destination="BYZ-38-t0r" id="HSl-8O-DAr"/>
+                        <segue destination="eA3-cC-66f" kind="show" id="QlS-E4-j3Q"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="75.669642857142847"/>
         </scene>
-        <!--View Controller-->
+        <!--Enlarged View Controller-->
         <scene sceneID="4UE-qi-CbC">
             <objects>
-                <viewController id="eA3-cC-66f" sceneMemberID="viewController">
+                <viewController id="eA3-cC-66f" customClass="EnlargedViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VPu-dy-mjQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,13 +92,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xv-Ad-cIo">
+                                <rect key="frame" x="344" y="30" width="30" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="×">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ZOV-yK-6fM" kind="unwind" unwindAction="unwind:" id="Fb6-hg-08p"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m1C-FR-3E6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m1C-FR-3E6" firstAttribute="trailing" secondItem="1Xv-Ad-cIo" secondAttribute="trailing" constant="40" id="K4I-Rz-Lqy"/>
+                            <constraint firstItem="1Xv-Ad-cIo" firstAttribute="top" secondItem="m1C-FR-3E6" secondAttribute="top" constant="30" id="VhA-cc-kDI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bck-hm-aN5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGb-Gy-ZHG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ZOV-yK-6fM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="704.34782608695662" y="75.669642857142847"/>
         </scene>

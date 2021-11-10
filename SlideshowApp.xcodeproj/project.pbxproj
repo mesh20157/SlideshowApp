@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1703DF2273C017100D088E4 /* EnlargedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1703DF1273C017100D088E4 /* EnlargedViewController.swift */; };
 		A1830578273A8E5700163F4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1830577273A8E5700163F4E /* AppDelegate.swift */; };
 		A183057A273A8E5700163F4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1830579273A8E5700163F4E /* SceneDelegate.swift */; };
 		A183057C273A8E5700163F4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A183057B273A8E5700163F4E /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A1703DF1273C017100D088E4 /* EnlargedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnlargedViewController.swift; sourceTree = "<group>"; };
 		A1830574273A8E5700163F4E /* SlideshowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideshowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1830577273A8E5700163F4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1830579273A8E5700163F4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				A1830577273A8E5700163F4E /* AppDelegate.swift */,
 				A1830579273A8E5700163F4E /* SceneDelegate.swift */,
 				A183057B273A8E5700163F4E /* ViewController.swift */,
+				A1703DF1273C017100D088E4 /* EnlargedViewController.swift */,
 				A183057D273A8E5700163F4E /* Main.storyboard */,
 				A1830580273A8E5800163F4E /* Assets.xcassets */,
 				A183058B273A942400163F4E /* image1.jpeg */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1703DF2273C017100D088E4 /* EnlargedViewController.swift in Sources */,
 				A183057C273A8E5700163F4E /* ViewController.swift in Sources */,
 				A1830578273A8E5700163F4E /* AppDelegate.swift in Sources */,
 				A183057A273A8E5700163F4E /* SceneDelegate.swift in Sources */,

@@ -23,12 +23,51 @@ class EnlargedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let nowIndex2 = imageNumber
+        let nowIndex = imageNumber
         // indexの画像をstoryboardの画像にセットする
-        enlargedImage.image = imageArray[nowIndex2]
+        enlargedImage.image = imageArray[nowIndex]
         // Do any additional setup after loading the view.
+        
     }
     
+    
+    //左にスワイプ
+    @IBAction func didSwipeLeft(_ sender: Any) {
+        // indexを増やして表示する画像を切り替える
+        imageNumber += 1
+
+        // indexが表示予定の画像の数と同じ場合
+        if (imageNumber == imageArray.count) {
+            // indexを一番最初の数字に戻す
+            imageNumber = 0
+        }
+        // indexの画像をstoryboardの画像にセットする
+        enlargedImage.image = imageArray[imageNumber]
+        
+    }
+    
+    //右にスワイプ
+    @IBAction func didSwipe(_ sender: Any) {
+        // indexが0の場合
+        if (imageNumber == 0) {
+            // indexを一番うしろの数字に戻す
+            imageNumber = imageArray.count - 1
+        }else{
+            // indexを減らして表示する画像を切り替える
+            imageNumber -= 1
+        }
+        
+        // indexの画像をstoryboardの画像にセットする
+            enlargedImage.image = imageArray[imageNumber]
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // segueから遷移先のViewControllerを取得する
+        let viewController:ViewController = segue.destination as! ViewController
+        // 遷移先のviewControllerで宣言しているnowIndexに値を代入して渡す
+        viewController.nowIndex = imageNumber
+    }
 
     /*
     // MARK: - Navigation

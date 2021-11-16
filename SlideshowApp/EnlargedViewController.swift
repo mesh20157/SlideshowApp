@@ -29,7 +29,7 @@ class EnlargedViewController: UIViewController {
         // Do any additional setup after loading the view.
         
     }
-    
+    //
     
     //左にスワイプ
     @IBAction func didSwipeLeft(_ sender: Any) {
@@ -79,4 +79,5 @@ class EnlargedViewController: UIViewController {
     }
     */
 
+    ///final2
 }
